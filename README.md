@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="web/public/logo.svg" width="84" alt="ARTEX logo" />
+<img src="web/public/logo.svg" width="84" alt="ARTEX logo" />上游新版本说明(v2.1)
 
 # ARTEX
 
