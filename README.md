@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="web/public/logo.svg" width="84" alt="ARTEX logo" />
+<img src="web/public/logo.svg" width="84" alt="ARTEX logo" />worder12 二开版:我的定制说明
 
 # ARTEX
 
