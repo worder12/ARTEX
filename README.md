@@ -62,6 +62,36 @@ docker compose logs artex | grep "Setup token"
 > There is no prebuilt Docker image to pull: the image is always built from your checkout.
 > For all installation paths (script, binaries, source, release archives), see [Installation](#installation).
 
+## 快速开始(中文)
+
+> 本节面向二开用户;完整安装方式见 [Installation](#installation),运维文档见 [docs/OPS.md](docs/OPS.md)。
+
+**前置要求**
+
+- Docker Desktop(Windows/Mac)或 Docker Engine(Linux)
+- 大模型 API Key(Anthropic / OpenAI 二选一;也可先留空,启动后在网页界面中配置)
+
+**启动步骤**
+
+```bash
+git clone https://github.com/worder12/ARTEX.git   # 换成你自己的 fork 地址
+cd ARTEX
+cp .env.example .env            # 复制配置模板:修改 POSTGRES_PASSWORD,可选填 LLM Key
+docker compose up -d --build    # 从本地代码构建镜像并启动 PostgreSQL
+```
+
+打开 **http://localhost:8787**,首次访问 `/setup` 页面需要输入启动日志里打印的一次性令牌:
+
+```bash
+docker compose logs artex | grep "Setup token"
+```
+
+**注意事项**
+
+- 镜像永远从本地代码构建(没有预构建镜像可拉取),因此对源码的二开改动在重建后直接生效
+- 镜像内置扫描工具链(`nmap`、`nuclei`、`httpx`、`katana`、`ffuf`、`dalfox`、`sqlmap` 等)
+- ⚠️ 仅限授权环境使用:自己的靶机、授权渗透测试或 bug bounty 项目
+
 ---
 
 ## Multi-provider workers
